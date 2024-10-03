@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/kontaktua.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Kontaktua</title>
+</head>
+<body>
+    <header>
+        <span class="logo_wrap">
+            <a href="#">
+                <img src="img/logo.png">
+            </a>
+        </span>
+        <nav>
+            <span id="hamburger_menu">
+                <span id="bar"></span>
+            </span>
+            <ul>
+                <li><a href="index.html">HASIERA</a></li>
+                <li><a href="zerikusi.html">ZER IKUSI</a></li>
+                <li><a href="zerjan.html">ZER JAN</a></li>
+                <li><a href="kontaktua.html">KONTAKTUA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="form-section">
+            <form action="kontaktua.js" method="POST">
+                <h2 class="titulua">KONTAKTUA</h2>
+
+                <label for="izena"><b>Izena:</b></label><br><br>
+                <input type="text" id="izena" name="izena" placeholder="Idatzi zure izena" required>
+
+                <br><br>
+
+                <label for="email"><b>E-mail::</b></label><br><br>
+                <input type="email" id="email" name="email" placeholder="Idatzi zure E-mail" required>
+
+                <br><br>
+
+            <label for="sexua"><b>Sexua:</b></label><br><br>
+            <div class="sexua">
+                <input type="radio" id="gizona" name="sexua" value="Gizona" required>
+                <label for="gizona">Gizona</label>
+
+                <input type="radio" id="emakumea" name="sexua" value="Emakumea" required>
+                <label for="emakumea">Emakumea</label>
+
+                <input type="radio" id="besteBat" name="sexua" value="Beste bat" required>
+                <label for="besteBat">Beste bat</label>
+            </div>
+            
+            <br><br>
+
+            <label for="ezagutza"><b>Nola ezagutu gaituzu?</b></label><br><br>
+            <div class="ezagutza">
+                <input type="checkbox" id="lagunak" name="ezagutza" value="Lagunak">
+                <label for="lagunak">Lagunak</label>
+
+                <input type="checkbox" id="familia" name="ezagutza" value="Familia">
+                <label for="familia">Familia</label>
+
+                <input type="checkbox" id="lanean" name="ezagutza" value="Lanean">
+                <label for="lanean">Lanean</label>
+
+                <input type="checkbox" id="besteEzagutza" name="ezagutza" value="Beste bat">
+                <label for="besteEzagutza">Beste bat</label>
+            </div><br>
+
+            <label for="mezua"><b>Mezua:</b></label><br><br>
+            <textarea id="mezua" name="mezua" rows="10" cols="40" required></textarea><br><br>
+
+            <div class="botoiak">
+                <input type="submit" value="Bidali">
+                <input type="reset" value="Ezabatu">
+            </div>
+            
+        </form>
+        </div>
+
+        <div class="argazkia">
+            <img src="img/Daniel Duce.jpg" alt="Kontaktua">
+        </div>
+    </div>
+
+    <footer>
+        <span class="logo_wrap">
+            <a href="#">
+                <img src="img/logo.png" class="logo-sm">
+            </a>
+        </span>
+        <nav>
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/kontaktua.js"></script>
+</body>
+</body>
+</html>

@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Lato', sans-serif; 
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(to left, #ffffff 50%, rgba(255, 255, 255, 0) 100%);}
+
+.form-section {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff; 
+}
+
+form {
+    width: 80%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.titulua {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top:20px;
+    font-size: 2em;
+}
+
+label, input, textarea {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.sexua, .ezagutza {
+    display: flex;
+    justify-content: space-between;
+}
+
+.argazkia {
+    width: 50%;
+    display: flex;
+}
+
+.argazkia img {
+    max-width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}
+
+input[type="submit"], input[type="reset"] {
+    width: auto;
+    padding: 15px 22px;
+    cursor: pointer;
+    background-color: #191818;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    transition: background-color #232323;
+}
+
+
