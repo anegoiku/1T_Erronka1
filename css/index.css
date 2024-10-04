@@ -1,9 +1,31 @@
 .argazkiNagusia{
-    min-width: 100%;
-    height: 550px;
-    object-fit: cover;
-}
+    position: relative;
+    z-index:-1;
+    width: 100%;
+    min-height: 100%;
 
+    & img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+/**Banner Visit Romania**/
+.banner{
+    background-color:white;
+    height:150px;
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    & img{
+        max-height:50px;
+    }
+
+   
+}
 .gridArgazkiak{
     display:grid;
     grid-template-columns: auto auto;
@@ -17,15 +39,15 @@
     position: relative;
     z-index:-1;
     text-align: center;
-    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-    1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-    
+
     & h2{
     position: absolute;
     z-index:0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+    1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 
     }
     & p{
@@ -35,23 +57,27 @@
         right: 25px;
     }
   }
-.banner{
-    background-color:pink;
-    height:150px;
-    width:100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    flex-direction: row;
-   
+
+@media (width < 1024px){
+    .banner{
+        & img:first-child{
+            display: none;
+        }
+    }
 }
-@media (max-width: 500px) {
+@media (width < 650px) {
     .gridArgazkiak {
       grid-template-columns: auto;
     }
 
     .argazkiNagusia img{
         object-fit: contain;
+    }
+    .banner{
+        flex-direction: column;
+        height:100px;
+        & img{
+            max-height: 35px;
+        }
     }
   }
