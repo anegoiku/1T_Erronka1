@@ -1,19 +1,15 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body, html {
-    height: 100%;
     font-family: 'Lato', sans-serif;
 }
 
-
-
 .container {
     display: flex;
-    min-height: calc(100vh - 120px); /* Ajusta según el tamaño de tu header y footer */
+    min-height: 100vh; 
     overflow: hidden;
 }
 
@@ -25,6 +21,9 @@ body, html {
     align-items: center;
     flex-direction: column;
     background-color: #ffffff;
+    margin-top: 50px; 
+    margin-bottom: 50px; 
+    min-height: 600px; 
 }
 
 form {
@@ -40,7 +39,7 @@ form {
     font-size: 2em;
 }
 
-label, input, textarea {
+label, input[type="text"], input[type="email"], textarea {
     width: 100%;
     margin-bottom: 5px;
 }
@@ -58,7 +57,6 @@ label, input, textarea {
     align-items: center;
 }
 
-
 .argazkia figure {
     margin: 0;
     position: relative;
@@ -72,7 +70,6 @@ label, input, textarea {
     height: 100%;
     object-fit: cover;
 }
-
 
 input[type="submit"], input[type="reset"] {
     width: auto;
@@ -106,19 +103,50 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 textarea {
     height: 150px;
     resize: vertical;
-
 }
 
+/*TABLET*/
+@media (width < 1024px) {
 
+    .container {
+        flex-direction: column; 
 
+    }
 
+    .form-section {
+        width: 100%; 
+        min-height: auto; 
+        margin: 10px 0;
 
-.logo_wrap img {
-    max-height: 40px;
-}
+    }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+    .argazkia {
+        display: none; 
+    }
+
+    input[type="submit"], input[type="reset"] {
+        width: 100%; 
+        padding: 12px 0; 
+        font-size: 1em; 
+        box-shadow: none; 
+    }
+
+    .sexua, .ezagutza {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .sexua input, .ezagutza input {
+        margin-right: 10px; 
+        width: auto; 
+        transform: scale(1); 
+    }
+
+    label {
+        margin-bottom: 10px; 
+    }
+
+    textarea {
+        height: 100px; 
+    }
 }

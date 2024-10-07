@@ -1,46 +1,50 @@
 .container{
     display: grid;
     width: 100%;
-    margin: 20px;
+    /* margin: 20px; */
     grid-template-columns: 1fr;
-    row-gap: 20px;
+    /* row-gap: 25px; */
 }
 
 .card{
     display: flex;
-    background-color: grey;
+    background-color: white;
     align-content:center;
-    margin: 0 100px;
+    /* margin: 0 100px; */
     z-index: -1; 
-    height: 300px;
+    height: 400px;
+    /* -webkit-box-shadow: 0px 0px 27px -1px rgba(168,168,168,1);
+    -moz-box-shadow: 0px 0px 27px -1px rgba(168,168,168,1);
+    box-shadow: 0px 0px 27px -1px rgba(168,168,168,1); */
 }
 
 .argazkiak{
+    display:flex;
+    justify-content:center;
+    align-items:center;
     height:100%;
-    width:100%;
+    width:50%;
+    overflow:hidden;
     
 }
 .eskuma{
     text-align: left;
-    mask-image: linear-gradient(270deg, black 70%, transparent);
+    /* mask-image: linear-gradient(270deg, black 70%, transparent); */
 }
 .ezkerra{
     text-align: right;
-    mask-image: linear-gradient(90deg, black 70%, transparent);
+    /* mask-image: linear-gradient(90deg, black 70%, transparent); */
 }
 img{
     width:100%;
     vertical-align: middle;
-    /* position: relative; */
-    /* z-index: -1; */
-
 }
 .info{
-    padding:10px;
+    padding:30px;
     text-align: justify;
-    margin-top:20px;
-    margin-left:10px;
-    width: 100%;
+    /* margin-top:20px;
+    margin-left:10px; */
+    width: 50%;
     
 }
 h1{
@@ -55,4 +59,11 @@ h2{
 }
 p{
     font-size: 20px;
+    margin-top:25px;
 }
+
+/*TABLET*/
+@media (max-width: 850px) {}
+
+/*MOVIL*/
+@media (max-width: 500px) {}
