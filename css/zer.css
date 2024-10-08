@@ -1,25 +1,23 @@
+/**Contenedor del body, incluye todo el contenido**/
 .container{
     display: grid;
     width: 100%;
-    /* margin: 20px; */
     grid-template-columns: 1fr;
-    /* row-gap: 25px; */
+
 }
 
+/**Estas cards contienen una foto con su respectiva informacion**/
 .card{
     display: flex;
     background-color: white;
     align-content:center;
-    /* margin: 0 100px; */
     z-index: -1; 
     height: 400px;
-    /* -webkit-box-shadow: 0px 0px 27px -1px rgba(168,168,168,1);
-    -moz-box-shadow: 0px 0px 27px -1px rgba(168,168,168,1);
-    box-shadow: 0px 0px 27px -1px rgba(168,168,168,1); */
 }
 
-.argazkiak{
-    display:flex;
+/**Este div contiene cada foto o video(para poder darle forma)**/
+.argazkiak, .bideoa{
+    position: relative;
     justify-content:center;
     align-items:center;
     height:100%;
@@ -27,25 +25,40 @@
     overflow:hidden;
     
 }
-.eskuma{
-    text-align: left;
-    /* mask-image: linear-gradient(270deg, black 70%, transparent); */
-}
-.ezkerra{
-    text-align: right;
-    /* mask-image: linear-gradient(90deg, black 70%, transparent); */
-}
+
 img{
+    min-height:100%;
     width:100%;
     vertical-align: middle;
 }
+
+/**Este div contiene tanto el titulo como el texto de cada card**/
 .info{
+    opacity: 0;
     padding:30px;
-    text-align: justify;
-    /* margin-top:20px;
-    margin-left:10px; */
     width: 50%;
+    transform: translateX(50%);
+    transition: .5s;
+
+    &:nth-child(1){
+        transform: translateX(-50%);
+
+        &.show{
+            transform: translateX(0%);
+        }
+    }
     
+}
+
+/*Este elemento solo contiene el titulo del card del medio*/
+.centro{
+    text-align:right;
+    margin-right:10px;
+}
+/* Mestra el texto, se implementa en zer.js */
+.show{
+    opacity: 1;
+    transform: translateX(0%);
 }
 h1{
     padding:20px;
@@ -53,17 +66,44 @@ h1{
 h2{
     font-size: 30px;
 }
-.osos{
-    text-align:right;
-    margin-right:10px;
-}
+
 p{
-    font-size: 20px;
     margin-top:25px;
+    text-align: justify;
 }
 
-/*TABLET*/
-@media (max-width: 850px) {}
 
-/*MOVIL*/
-@media (max-width: 500px) {}
+/*MOVIL y TABLET*/
+@media (max-width: 850px) {
+    
+    .card{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .argazkiak, .bideoa{
+        display:flex;
+        width:100%;
+    }
+    .bideoa{
+        height:300px;
+    }
+
+    img{
+        height: 100%;
+    }
+    
+    .info{
+        width: 100%;
+    }
+    
+    .eskuma{
+        order:-1;
+    }
+
+    .centro{
+        text-align:left;
+        margin-right:10px;
+    }
+}

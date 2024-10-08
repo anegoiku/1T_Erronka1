@@ -15,6 +15,10 @@
     font-family: "Lato", system-ui;
     font-style: normal;
 }
+p, ol{
+    text-align: justify;
+    text-justify: inter-word;
+}
 h2{
     margin:10px;
 }
@@ -23,6 +27,7 @@ body{
     align-items: center;
     flex-direction: column;
     width: 100%;
+    overflow-x: hidden;
 }
 
 /**Argazkien jabetza**/
@@ -150,7 +155,8 @@ header{
         }
     }
 }
-
+/**Footer**/
+/**CC BY-NC 4.0 eta CC BY 2.0**/
 footer{
     display: flex;
     align-items: center;
@@ -158,7 +164,10 @@ footer{
     width: 100%;
     background-color: black;
     padding:15px 0;
-
+    color:rgb(116, 116, 116);
+    & p{
+        margin-top:20px;
+    }
     & nav{
         display: flex;
         justify-content: center;

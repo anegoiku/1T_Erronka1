@@ -1,17 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
-    
+/*Egiaztatzen du galdetegian parametroak badaude eta confirm bat irtetzen da bidaltzeko edo ez*/
+document.getElementById("submit").addEventListener("click", function(event) {
+    event.preventDefault();
+
     const form = document.querySelector("form");
-
-    form.addEventListener("submit", function (event) {
-
-        const confirmSend = confirm("Ziur zaude formularioa bidali nahi duzula?");
-
-        if (confirmSend) {
-
-            alert("¡Ondo bidali da formularioa!");
+    if (form.checkValidity()) {
+        const erantzuna = confirm("¿Ziur zaude mezu hori bidali nahi duzula?");
+        
+        if (erantzuna) {
+            alert("Ondo bidali da kontaktu galdetegia!");
+            form.submit(); 
         } else {
-            event.preventDefault();
-            alert("¡Ez duzu formularioa bidali!");
+            alert("Ez duzu galdetegia bidali!");
         }
-    });
+    } else {
+        alert("Mesedez, bete galdetegiko parametro guztiak bidali ahal izateko!");
+    }
+});
+
+//Ezabatu botoia zakatzerakoan confirm batekin galdetzen du ea ezabatu nahi den
+document.getElementById("reset").addEventListener("click", function(event) {
+    const erantzuna = confirm("Ezabatu nahi al duzu formularioa?");
+    if (!erantzuna) {
+        event.preventDefault(); 
+    }
 });

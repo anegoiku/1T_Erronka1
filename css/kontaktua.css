@@ -1,18 +1,37 @@
+/* Elementu guztien marjinak eta paddingak ezabatu */
 * {
     margin: 0;
     padding: 0;
 }
 
+/* Dokumentuaren fonta ezartzen du */
 body, html {
     font-family: 'Lato', sans-serif;
 }
 
+/* Edukien banaketa Flexbox erabiliz antolatzen duen kontenedore nagusia */
 .container {
     display: flex;
     min-height: 100vh; 
-    overflow: hidden;
+    overflow: hidden; 
 }
 
+/* Formularioaren estilo orokorra */
+form {
+    width: 80%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Formularioaren titulua */
+.titulua {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+/* Formularioaren atala*/
 .form-section {
     width: 50%;
     padding: 20px;
@@ -26,29 +45,41 @@ body, html {
     min-height: 600px; 
 }
 
-form {
-    width: 80%;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.titulua {
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-size: 2em;
-}
-
+/* Etiketen, testu sarreraren, emailaren eta textarea-ren estiloa */
 label, input[type="text"], input[type="email"], textarea {
     width: 100%;
     margin-bottom: 5px;
 }
 
+/* Testu sarrerako eta textarea-ren estiloa */
+input[type="text"], input[type="email"], textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+/* Testu sarrerako eta textarea-ren fokus efektua */
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #191818;
+    outline: none;
+}
+
+/* Textarea bereziaren estiloa */
+textarea {
+    height: 150px;
+    resize: vertical;
+    resize: none;
+}
+
+/* "Sexua" eta "Ezagutza" ataleko estiloa */
 .sexua, .ezagutza {
     display: flex;
     justify-content: space-between;
 }
 
+/* Irudiaren atala */
 .argazkia {
     width: 50%;
     display: flex;
@@ -57,6 +88,7 @@ label, input[type="text"], input[type="email"], textarea {
     align-items: center;
 }
 
+/* Irudien figura atalaren estiloa */
 .argazkia figure {
     margin: 0;
     position: relative;
@@ -65,12 +97,14 @@ label, input[type="text"], input[type="email"], textarea {
     z-index: -1;
 }
 
+/* Irudiak figuran */
 .argazkia img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+/* Bidali eta ezabatu botoien estiloa */
 input[type="submit"], input[type="reset"] {
     width: auto;
     padding: 15px 22px;
@@ -83,70 +117,50 @@ input[type="submit"], input[type="reset"] {
     transition: background-color 0.3s;
 }
 
+/* Botoien hover efektua */
 input[type="submit"]:hover, input[type="reset"]:hover {
     background-color: #333333;
 }
 
-input[type="text"], input[type="email"], textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-    transition: border-color 0.3s;
-}
 
-input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
-    border-color: #191818;
-    outline: none;
-}
-
-textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-/*TABLET*/
+/* Tabletentzako estiloak */
 @media (width < 1024px) {
-
     .container {
-        flex-direction: column; 
-
+        flex-direction: row; 
+        z-index: -1;
     }
 
     .form-section {
         width: 100%; 
         min-height: auto; 
         margin: 10px 0;
-
     }
 
     .argazkia {
-        display: none; 
+        display: flex; 
+        position: relative; 
+        width: 40%;      
     }
 
     input[type="submit"], input[type="reset"] {
         width: 100%; 
         padding: 12px 0; 
         font-size: 1em; 
-        box-shadow: none; 
     }
 
     .sexua, .ezagutza {
-        flex-direction: column; 
+        flex-direction: row; 
         align-items: flex-start; 
     }
+}
 
-    .sexua input, .ezagutza input {
-        margin-right: 10px; 
-        width: auto; 
-        transform: scale(1); 
+/* Mugikorretarako estiloak */
+@media (width < 650px) {
+    .argazkia {
+        display: none;
     }
-
-    label {
-        margin-bottom: 10px; 
-    }
-
-    textarea {
-        height: 100px; 
+    .sexua, .ezagutza {
+        flex-direction: column; 
+        align-items: flex-start; 
     }
 }
