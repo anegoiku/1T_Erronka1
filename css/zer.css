@@ -1,3 +1,11 @@
+:root{
+    --natura: #a5f78c;
+    --eraikinak: rgb(209, 139, 250);
+    --artea: #f35e5e;
+    --gazia:#95dcfd;
+    --gozoa:#fca7e2;
+}
+
 /**Contenedor del body, incluye todo el contenido**/
 .container{
     display: grid;
@@ -7,12 +15,50 @@
 }
 
 /**Estas cards contienen una foto con su respectiva informacion**/
+
+
 .card{
     display: flex;
     background-color: white;
     align-content:center;
     z-index: -1; 
     height: 400px;
+    overflow: hidden;
+
+     /* &:nth-child(even){
+        flex-direction: row-reverse; 
+
+    } */
+}
+/**Etiketak (Natura, eraikinak, artea)**/
+.pill {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    font-size:16px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 4px;
+    cursor: pointer;
+    border-radius: 16px;
+
+    &.eraikinak{
+        background-color: var(--eraikinak);
+    }
+    &.natura{
+        background-color: var(--natura);
+    }
+    &.artea{
+        background-color: var(--artea);
+    }
+    &.gazia{
+         background-color:var(--gazia); 
+    }
+    &.gozoa{
+        background-color:var(--gozoa); 
+    }
 }
 
 /**Este div contiene cada foto o video(para poder darle forma)**/
@@ -34,32 +80,53 @@ img{
 
 /**Este div contiene tanto el titulo como el texto de cada card**/
 .info{
+    display: flex;
+    flex-direction: column;
     opacity: 0;
     padding:30px;
     width: 50%;
-    transform: translateX(50%);
     transition: .5s;
-
-    &:nth-child(1){
+/* 
+    &:nth-child(odd){
         transform: translateX(-50%);
-
-        &.show{
-            transform: translateX(0%);
+ 
+        p{
+            text-align: left;
         }
     }
+
+    &:nth-child(even){
+        /* transform: translateX(-50%); */
+        /* align-items: flex-start; */
+
+    /* } */
+
+    /* &.show{
+        opacity: 1;
+        transform: translateX(0%);
+    } */
+}
+.card:nth-child(odd){
+    transform: translateX(50%);
+
+        align-items: start;
+        text-align: left;
     
 }
-
-/*Este elemento solo contiene el titulo del card del medio*/
-.centro{
-    text-align:right;
-    margin-right:10px;
+.card:nth-child(even){
+        transform: translateX(-50%);
+        &.proba{
+            align-items: end;
+            text-align: right;
+        }
 }
-/* Mestra el texto, se implementa en zer.js */
-.show{
+
+.info.show{
     opacity: 1;
     transform: translateX(0%);
 }
+
+/* Mestra el texto, se implementa en zer.js */
 h1{
     padding:20px;
 }
@@ -74,12 +141,18 @@ p{
 
 
 /*MOVIL y TABLET*/
-@media (max-width: 850px) {
-    
+@media (width <  850px) {
+    .card{
+        &:nth-child(even){
+            flex-direction: column;
+        }
+    }
     .card{
         display: flex;
         flex-direction: column;
         height: 100%;
+        text-align:left;
+ 
     }
     
     .argazkiak, .bideoa{
@@ -97,13 +170,5 @@ p{
     .info{
         width: 100%;
     }
-    
-    .eskuma{
-        order:-1;
-    }
 
-    .centro{
-        text-align:left;
-        margin-right:10px;
-    }
 }

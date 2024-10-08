@@ -1,4 +1,4 @@
-/*Egiaztatzen du galdetegian parametroak badaude eta confirm bat irtetzen da bidaltzeko edo ez*/
+//Bidali botoia(submit)
 document.getElementById("submit").addEventListener("click", function(event) {
     event.preventDefault();
 
@@ -17,10 +17,10 @@ document.getElementById("submit").addEventListener("click", function(event) {
     }
 });
 
-//Ezabatu botoia zakatzerakoan confirm batekin galdetzen du ea ezabatu nahi den
+//Ezabatu botoia(reset)
 document.getElementById("reset").addEventListener("click", function(event) {
     const erantzuna = confirm("Ezabatu nahi al duzu formularioa?");
     if (!erantzuna) {
-        event.preventDefault(); 
+        event.preventDefault(); // Honek ezabatzea ekiditen du erantzuna ezezkoa bada
     }
 });
