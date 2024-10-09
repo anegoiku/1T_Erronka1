@@ -4,11 +4,6 @@
     padding: 0;
 }
 
-/* Dokumentuaren fonta ezartzen du */
-body, html {
-    font-family: 'Lato', sans-serif;
-}
-
 /* Edukien banaketa Flexbox erabiliz antolatzen duen kontenedore nagusia */
 .container {
     display: flex;
@@ -22,13 +17,8 @@ form {
     margin-top: 15px;
     margin-bottom: 15px;
 }
-
-/* Formularioaren titulua */
-.titulua {
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-size: 2em;
+.titulua{
+    text-align:center;
 }
 
 /* Formularioaren atala*/
@@ -39,7 +29,7 @@ form {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     margin-top: 50px; 
     margin-bottom: 50px; 
     min-height: 600px; 
@@ -116,6 +106,8 @@ input[type="submit"], input[type="reset"] {
     margin-top: 10px;
     transition: background-color 0.3s;
 }
+
+
 
 /* Botoien hover efektua */
 input[type="submit"]:hover, input[type="reset"]:hover {

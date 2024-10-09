@@ -16,7 +16,7 @@
 /* Cards */
 .card {
     display: flex;
-    background-color: white;
+    /* background-color: white; */
     height: 400px;
     overflow: hidden;
     transition: transform 0.5s ease;
@@ -41,6 +41,8 @@
         flex-direction: row-reverse;
         .info {
             transform: translateX(-50%);
+            align-items: end;
+
         }
     }
 
@@ -58,13 +60,11 @@
     font-size: 16px;
     padding: 10px 20px;
     text-align: center;
-    display: inline-block;
     margin: 4px;
-    cursor: pointer;
     border-radius: 16px;
     width: fit-content;
 
-    &.eraikinak { background-color: var(--eraikinak); }
+    &.eraikinak { background-color: var(--eraikinak) }
     &.natura { background-color: var(--natura); }
     &.artea { background-color: var(--artea); }
     &.gazia { background-color: var(--gazia); }
@@ -102,7 +102,7 @@ p {
     text-align: justify;
 }
 
-/* Móviles y tabletas */
+/* Móviles y tablets */
 @media (max-width: 850px) {
     .container .card {
         flex-direction: column;

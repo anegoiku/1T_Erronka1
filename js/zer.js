@@ -1,5 +1,5 @@
 const cards_info = document.querySelectorAll('.info')
-// Esto hara que aparezca el texto cuando 
+// Esto hara que aparezca el texto cuando el elemento este dentro de la pantalla 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if(entry.isIntersecting){
@@ -9,7 +9,7 @@ const observer = new IntersectionObserver(entries => {
         }
     })
 }, {
-    threshold: 0.5
+    threshold: 0.2
 })
 
 cards_info.forEach(info => {
