@@ -4,17 +4,34 @@ document.getElementById("submit").addEventListener("click", function(event) {
 
     const form = document.querySelector("form");
     if (form.checkValidity()) {
-        const erantzuna = confirm("¿Ziur zaude mezu hori bidali nahi duzula?");
+        const erantzuna = confirm("Ziur zaude mezu hori bidali nahi duzula?");
         
         if (erantzuna) {
-            alert("Ondo bidali da kontaktu galdetegia!");
-            form.submit(); 
+                let izena= document.getElementById('izena').value;
+                let email= document.getElementById('email').value;
+
+                let sexua = document.querySelector('input[name="sexua"]:checked').value;
+                let ezagutza = Array.from(document.querySelectorAll('input[name="ezagutza"]:checked'))
+                    .map(checkbox => checkbox.value);
+
+                let mezua = document.getElementById('mezua').value;
+
+                let datos = [
+                    `Izena: ${izena}`,
+                    `E-mail: ${email}`,
+                    `Sexua: ${sexua}`,
+                    `Ezagutza: ${ezagutza.join(', ')}`,
+                    `Mezua: ${mezua}`
+                ];
+                alert("Formularioa ondo bidali da datu hauekin: \n"+datos.join('\n'));
+          
         } else {
             alert("Ez duzu galdetegia bidali!");
         }
     } else {
         alert("Mesedez, bete galdetegiko parametro guztiak bidali ahal izateko!");
     }
+
 });
 
 //Ezabatu botoia(reset)

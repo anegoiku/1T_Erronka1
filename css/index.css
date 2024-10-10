@@ -32,7 +32,6 @@
 }
 /**Banner Visit Romania**/
 .banner{
-    /* background-color:white; */
     height:150px;
     width:100%;
     display: flex;
@@ -48,21 +47,24 @@
     }
    
 }
+
 /**Argazkiek osatutako grid-a**/
 .gridArgazkiak{
     display:grid;
     grid-template-columns: auto auto;
+
 
     & img{
         width:100%;
         min-height: 100%;
     }
 }
+
 /**Grideko argazki bakoitza**/
 .cardArgazkia{
     position: relative;
-    z-index:-1;
     text-align: center;
+    overflow: hidden;
 
     & h2{
     position: absolute;
@@ -71,6 +73,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    /* Hace que no se le pueda hacer hover al elemento */
+    pointer-events: none;
     text-shadow: 3px 3px 2px rgb(0, 0, 0),
          -16px 0px 10px rgb(0, 0, 0),
          0px -10px 18px rgb(0, 0, 0),
@@ -84,7 +88,18 @@
         bottom: 8px;
         right: 25px;
     }
+    & img {
+        transition: 0.5s;
+        display: block;
+        cursor:pointer;
+
+        &:hover{
+            /*Argazki gainean arratoia jartzean zooma egiten du*/
+            transform: scale(1.2);
+        }
+    }
   }
+
 /**Tablet**/
 @media (width < 1024px){
     /**Tablet eta txikiagoetan bannerreko irudi bat desagertu egiten da (Visit Romaniako lehen logoa)**/

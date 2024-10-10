@@ -1,4 +1,6 @@
-const cards_info = document.querySelectorAll('.info')
+const cards = document.querySelectorAll('.card')
+const cards_info = document.querySelectorAll('.card .info')
+
 // Esto hara que aparezca el texto cuando el elemento este dentro de la pantalla 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -15,3 +17,37 @@ const observer = new IntersectionObserver(entries => {
 cards_info.forEach(info => {
     observer.observe(info)
 })
+
+document.querySelectorAll('#filtro button').forEach(filtro => {
+    filtro.addEventListener('click', function(event){
+        reset_filtro()
+
+        const clase = event.target.innerText.toLowerCase()
+        console.log(clase)
+
+        if(clase !== "guztiak"){
+            document.querySelectorAll('.container .card').forEach(card => {
+                // Si el card no contiene la clase seleccionada, lo elimina del DOM
+                if(!card.classList.contains(clase)){
+                    card.remove()
+                }
+            })
+            // Si se selecciona la opcion guztiak, se
+        }else{
+            reset_filtro()
+        }
+    })
+})
+
+// deja las cartas en su estado original
+function reset_filtro(){
+    // Borra las cartas que estan actualmente visibles
+    document.querySelectorAll('.container .card').forEach(card => {
+        card.remove()
+    })
+
+    // Reinserta todas las cartas
+    cards.forEach(card => {
+        document.querySelector('.container').appendChild(card)
+    })
+}

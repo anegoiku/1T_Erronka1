@@ -51,6 +51,23 @@
         transform: translateX(0%); /* Muestra el contenido en su posición final */
     }
 }
+/* Filtros de busqueda */
+#filtro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+
+
+    button{
+        cursor:pointer;
+        transition: .2s;
+
+        &:hover{
+            filter: brightness(.9);
+        }
+    }
+}
 
 /* Píldoras de etiquetas */
 .pill {
@@ -64,11 +81,11 @@
     border-radius: 16px;
     width: fit-content;
 
-    &.eraikinak { background-color: var(--eraikinak) }
-    &.natura { background-color: var(--natura); }
-    &.artea { background-color: var(--artea); }
-    &.gazia { background-color: var(--gazia); }
-    &.gozoa { background-color: var(--gozoa); }
+    &.eraikinak_bg { background-color: var(--eraikinak) }
+    &.natura_bg { background-color: var(--natura); }
+    &.artea_bg { background-color: var(--artea); }
+    &.gazia_bg { background-color: var(--gazia); }
+    &.gozoa_bg { background-color: var(--gozoa); }
 }
 
 /* Imagen o video */
