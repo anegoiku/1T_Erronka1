@@ -6,17 +6,16 @@
     --gozoa: #fca7e2;
 }
 
-/* Contenedor principal */
+/* Kontenedore printzipala */
 .container {
     display: grid;
     width: 100%;
     grid-template-columns: 1fr;
 }
 
-/* Cards */
+/* Cardak */
 .card {
     display: flex;
-    /* background-color: white; */
     height: 400px;
     overflow: hidden;
     transition: transform 0.5s ease;
@@ -29,7 +28,7 @@
         width: 50%;
         transition: .5s ease;
     }
-
+    /*Tituluak eta paragrafoak erdian egotea egiten du eta paragrafoak bere aldetik ataratzea ere*/
     &:nth-child(odd) {
         flex-direction: row;
         .info {
@@ -48,10 +47,10 @@
 
     .info.show {
         opacity: 1;
-        transform: translateX(0%); /* Muestra el contenido en su posición final */
+        transform: translateX(0%); /* Edukia bere azken posizioan erakusten du */
     }
 }
-/* Filtros de busqueda */
+/* Bilaketa filtroak */
 #filtro{
     display: flex;
     align-items: center;
@@ -69,7 +68,7 @@
     }
 }
 
-/* Píldoras de etiquetas */
+/* Etiketen píldorak */
 .pill {
     background-color: #ddd;
     border: none;
@@ -88,7 +87,7 @@
     &.gozoa_bg { background-color: var(--gozoa); }
 }
 
-/* Imagen o video */
+/* Argazkiak edo bideoak */
 .argazkiak,
 .bideoa {
     position: relative;
@@ -119,11 +118,16 @@ p {
     text-align: justify;
 }
 
-/* Móviles y tablets */
+/* Mugikorrak eta tabletak */
 @media (max-width: 850px) {
     .container .card {
         flex-direction: column;
         height: auto;
+
+        .info{
+            align-items: start;
+        }
+        
     }
 
     .container .argazkiak,
@@ -138,5 +142,11 @@ p {
 
     .container img {
         height: 100%;
+        width: 100%;
+    }
+
+    #filtro{
+        width: 75%;
+        flex-wrap: wrap;
     }
 }

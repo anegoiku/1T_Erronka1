@@ -18,6 +18,8 @@ cards_info.forEach(info => {
     observer.observe(info)
 })
 
+
+// Logica de los filtros
 document.querySelectorAll('#filtro button').forEach(filtro => {
     filtro.addEventListener('click', function(event){
         reset_filtro()
@@ -39,7 +41,7 @@ document.querySelectorAll('#filtro button').forEach(filtro => {
     })
 })
 
-// deja las cartas en su estado original
+// Deja las cartas en su estado original
 function reset_filtro(){
     // Borra las cartas que estan actualmente visibles
     document.querySelectorAll('.container .card').forEach(card => {

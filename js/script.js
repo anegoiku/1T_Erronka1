@@ -13,4 +13,3 @@ document.getElementById('hamburger_menu').addEventListener('click', () => {
     document.getElementById('hamburger_menu').classList.toggle('menu_open')
     document.querySelector('header nav ul').classList.toggle('menu_open')
 })
-

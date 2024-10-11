@@ -1,11 +1,11 @@
-/**ARGAZKI NAGUSIA ETA TITULUA**/
+/*ARGAZKI NAGUSIA ETA TITULUA*/
 .argazkiNagusia{
     position: relative;
     z-index:-1;
     width: 100%;
     min-height: 100%;
 
-    & img{
+    img{
         object-fit: cover;
         width: 100%;
         height: 100%;
@@ -19,7 +19,8 @@
         transform: translate(-50%, -50%);
 
     }
-    & h1, h3{
+
+    h1, h3{
         color: white;
         text-shadow: 3px 3px 2px rgb(0, 0, 0),
              -16px 0px 10px rgb(0, 0, 0),
@@ -30,7 +31,7 @@
 
 
 }
-/**Banner Visit Romania**/
+/*Banner Visit Romania*/
 .banner{
     height:150px;
     width:100%;
@@ -39,41 +40,43 @@
     align-content: center;
     align-items: center;
     flex-direction: row;
-    & img:nth-child(1), img:nth-child(3){
+
+    img:nth-child(1), img:nth-child(3){
         max-height:90px;
     }
-    & img:nth-child(2){
+
+    img:nth-child(2){
         max-height:60px;
     }
    
 }
 
-/**Argazkiek osatutako grid-a**/
+/*Argazkiek osatutako grid-a*/
 .gridArgazkiak{
     display:grid;
     grid-template-columns: auto auto;
 
-
-    & img{
+    img{
         width:100%;
         min-height: 100%;
     }
 }
 
-/**Grideko argazki bakoitza**/
+/*Grideko argazki bakoitza*/
 .cardArgazkia{
     position: relative;
     text-align: center;
     overflow: hidden;
 
-    & h2{
+    h2{
     position: absolute;
     z-index:0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    /* Hace que no se le pueda hacer hover al elemento */
+
+    /* Elementuari hover ez ahal egitea */
     pointer-events: none;
     text-shadow: 3px 3px 2px rgb(0, 0, 0),
          -16px 0px 10px rgb(0, 0, 0),
@@ -82,13 +85,13 @@
          15px 5px 14px rgb(0, 0, 0);
 
     }
-    & p{
+    p{
         position: absolute;
         z-index:0;
         bottom: 8px;
         right: 25px;
     }
-    & img {
+    img {
         transition: 0.5s;
         display: block;
         cursor:pointer;
@@ -100,18 +103,18 @@
     }
   }
 
-/**Tablet**/
+/*Tablet*/
 @media (width < 1024px){
-    /**Tablet eta txikiagoetan bannerreko irudi bat desagertu egiten da (Visit Romaniako lehen logoa)**/
+    /*Tablet eta txikiagoetan bannerreko irudi bat desagertu egiten da (Visit Romaniako lehen logoa)*/
     .banner{
-        & img:first-child{
+        img:first-child{
             display: none;
         }
     }
 }
-/**Mobila**/
+/*Mobila*/
 @media (width < 650px) {
-    /**Mobilean argazkien gridak zutabe bakarra dauka**/
+    /*Mobilean argazkien gridak zutabe bakarra dauka*/
     .gridArgazkiak {
       grid-template-columns: auto;
     }
@@ -119,19 +122,27 @@
     .argazkiNagusia img{
         object-fit: contain;
     }
-    /**Banerreko irudiak zutabean jarri eta tamaina aldaketa txiki batzuk**/
+    /*Banerreko irudiak zutabean jarri eta tamaina aldaketa txiki batzuk*/
     .banner{
         flex-direction: column;
         height:250px;
-        & img{
+        img{
             max-height: 35px;
+
+            &:nth-child(2){
+                width: 100%;
+            }
         }
     }
-    /**Argazki nagusiko tituluaren kokapena egokitu**/
+    /*Argazki nagusiko tituluaren kokapena egokitu*/
     .argazkiNagusia{
 
     & .titulua{
         top: 50%;
+
+        h3{
+            display: none;
+        }
     }
     }
 
