@@ -11,7 +11,7 @@ const observer = new IntersectionObserver(entries => {
         }
     })
 }, {
-    threshold: 0.2
+    threshold: 0.4
 })
 
 cards_info.forEach(info => {
